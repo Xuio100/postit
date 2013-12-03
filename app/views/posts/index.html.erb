@@ -1,0 +1,53 @@
+<% if !logged_in? %>
+  <div class="alert alert-block">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <h3>Welcome!</h3>
+
+    Fun Welcome Page!
+
+    <div class='row'>
+      <div class="span5">
+        <h5>Features:</h5>
+        <ul>
+          <li>Built with Ruby 2 and Rails 4</li>
+          <li>Create and edit posts</li>
+          <li>Comment and vote on posts</li>
+          <li>Authentication</li>
+          <li>Tracks who created every comment, vote, and post</li>
+          <li>Organize posts by category</li>
+          <li>View and edit user profiles</li>
+          <li>Uses roles to allow admins to edit all posts</li>
+          <li>Uses ajax to vote</li>
+          <li>Slugs as URLs</li>
+          <li>Display time based on user specified time zone</li>
+          <li>Deployed to Heroku</li>
+          <li>Uses gem to extract common logic</li>
+          <li>2-factor authentication</li>
+        </ul>
+      </div>
+      <div class="span5">
+        <h5>Fruits</h5>
+        <ul>
+          <li>Apples</li>
+          <li>Oranges</li>
+          <li>Figs</li>
+          <li>Plums</li>
+          <li>Bannanas</li>
+          <li>Strawberries</li>
+          <li>Blueberries</li>
+          <li>Blackberries</li>
+          <li>Tomatoes (Technically)</li>
+          <li>Grapes</li>
+          <li>Pineapples</li>
+          <li>Peaches</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<%= render 'shared/content_title', title: 'All Posts' %>
+
+<% @posts.each do |post| %>
+  <%= render 'post', post: post %>
+<% end %>
